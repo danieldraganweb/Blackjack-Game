@@ -1,6 +1,6 @@
-html,
 body {
-  background-color: #571c1c;
+  border: 1 px solid whitesmoke;
+  background-color: #000000;
   color: #fff;
   font-family: monospace;
   font-size: 16px;
@@ -10,6 +10,7 @@ body {
   position: relative;
 }
 .logo {
+  border: 1 px solid whitesmoke;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,33 +20,62 @@ body {
   margin-top: 1em;
   background-color: black;
   color: crimson;
-  font-size: 3em;
-  border-radius: 1em;
+  font-size: 1em;
+  border-radius: 0.5em;
   line-height: 0.5;
-  width: 13em;
-  height: 5em;
+  width: 17em;
+  height: 8em;
   position: relative;
+  line-height: 2px;
+}
+button {
+  border: 1 px solid whitesmoke;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: crimson;
+  color: white;
+  font-size: 1em;
+  border-radius: 0.5em;
+  line-height: 0.5;
+  width: 9em;
+  height: 2.5em;
+  position: relative;
+  line-height: 2px;
+  margin: 0.5em;
+}
+.bet-input {
+  border: 1 px solid whitesmoke;
+  align-items: center;
 }
 #dealer-cards img {
+  border: 1 px solid whitesmoke;
   height: 175px;
   width: 125px;
   margin: 1px;
+  border-radius: 5px;
 }
 
 #your-cards img {
+  border: 1 px solid whitesmoke;
   height: 175px;
   width: 125px;
   margin: 1px;
+  border-radius: 5px;
 }
 
-#hit {
-  width: 100px;
-  height: 50px;
+/* #hit {
+  width: 10em;
+  height: 80px;
   font-size: 20px;
+  border-radius: 1em;
 }
 
 #stay {
-  width: 100px;
-  height: 50px;
+  width: 10em;
+  height: 80px;
   font-size: 20px;
-}
+  border-radius: 1em;
+} */
