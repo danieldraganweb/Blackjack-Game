@@ -1,7 +1,6 @@
 body {
   width: 100vw;
   height: 100vh;
-  /* hide the horizonal scrollbar */
   overflow-x: hidden;
   border: 1px solid whitesmoke;
   background-color: #000000;
@@ -24,7 +23,7 @@ body {
   align-items: center;
   border: 1px solid whitesmoke;
   width: 85vw;
-  height: 70vh;
+  height: 100vh;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -34,7 +33,7 @@ body {
   position: relative;
 }
 .logo {
-  border: 1px solid whitesmoke;
+  border: 1px solid rgb(115, 11, 11);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,6 +50,8 @@ body {
   height: 8em;
   position: relative;
   line-height: 2px;
+  box-sizing: content-box;
+  margin-top: 0.5em;
 }
 button {
   border: 1px solid whitesmoke;
@@ -79,7 +80,7 @@ button {
   justify-content: center;
   align-items: center;
   border: 1px solid;
-  width: 70vw;
+  width: 50vw;
   height: 10vh;
   margin-left: auto;
   margin-right: auto;
@@ -87,6 +88,8 @@ button {
   position: relative;
   background-color: black;
   color: crimson;
+  padding: 1em;
+  border-radius: 1em;
 }
 .bet-input {
   border: 1 px solid whitesmoke;
