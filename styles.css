@@ -1,18 +1,22 @@
 html,
 body {
-  background-color: #000;
+  background-color: #571c1c;
   color: #fff;
   font-family: monospace;
   font-size: 16px;
   line-height: 1.5;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 .logo {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
   background-color: black;
   color: crimson;
   font-size: 3em;
@@ -21,4 +25,27 @@ body {
   width: 13em;
   height: 5em;
   position: relative;
+}
+#dealer-cards img {
+  height: 175px;
+  width: 125px;
+  margin: 1px;
+}
+
+#your-cards img {
+  height: 175px;
+  width: 125px;
+  margin: 1px;
+}
+
+#hit {
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+}
+
+#stay {
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
 }
