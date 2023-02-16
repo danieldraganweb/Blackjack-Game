@@ -1,3 +1,4 @@
+html,
 body {
   background-color: #000;
   color: #fff;
@@ -6,4 +7,18 @@ body {
   line-height: 1.5;
   margin: 0;
   padding: 0;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: crimson;
+  font-size: 3em;
+  border-radius: 1em;
+  line-height: 0.5;
+  width: 13em;
+  height: 5em;
+  position: relative;
 }
