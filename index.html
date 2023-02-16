@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="blackjack.js"></script>
   </head>
-
   <body>
     <div class="container">
       <div class="logo">
-        <h1>Black Jack</h1>
+        <h1>Blackjack Casino</h1>
         <p>
           <span id="wins">0</span> Wins <span id="losses">0</span> Losses
           <span id="draws">0</span> Draws
@@ -24,21 +23,25 @@
             <img id="hidden" src="./cards/BACK.png" />
           </div>
         </div>
+        </br>
         <br />
         <div>
-          <h2>You: <span id="your-sum"></span></h2>
+          <h2>Player: <span id="your-sum"></span></h2>
           <div id="your-cards"></div>
           <br />
         </div>
       </div>
       <div class="bet-input">
         <div class="balance">
-          <h2>Balance: <span id="balance">100$</span></h2>
+          <h3>Balance: <span id="balance">10000 $</span></h3>
+          <input type="number" id="bet" />
+          <button>+10</button>
+          <button>+100</button>
+          <button>+1000</button>
         </div>
-        <input type="number" id="bet" />
-        <button id="bet">Bet</button>
       </div>
-      <div class="button-container">
+      <div class="buttons">
+        <button id="bet">Bet</button>
         <button id="hit">Hit</button>
         <button id="start">Stay</button>
         <p id="results"></p>
