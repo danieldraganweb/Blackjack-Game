@@ -4,22 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Black Jack</title>
-    <link rel="stylesheet" href="blackjack.css" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="blackjack.js"></script>
   </head>
 
   <body>
-    <h2>Dealer: <span id="dealer-sum"></span></h2>
-    <div id="dealer-cards">
-      <img id="hidden" src="./cards/BACK.png" />
+    <div class="logo">
+      <h1>Black Jack</h1>
+      <p>Place your bet</p>
+      <p>
+        <span id="wins">0</span> Wins <span id="losses">0</span> Losses
+        <span id="draws">0</span> Draws
+      </p>
     </div>
-
-    <h2>You: <span id="your-sum"></span></h2>
-    <div id="your-cards"></div>
-
-    <br />
-    <button id="hit">Hit</button>
-    <button id="stay">Stay</button>
-    <p id="results"></p>
+    <div class="container">
+      <h2>Dealer: <span id="dealer-sum"></span></h2>
+      <div id="dealer-cards">
+        <img id="hidden" src="./cards/BACK.png" />
+      </div>
+      <h2>You: <span id="your-sum"></span></h2>
+      <div id="your-cards"></div>
+      <br />
+      <div class="bet-input">
+        <label for="bet">Bet: </label>
+        <input type="number" id="bet" />
+      </div>
+      <div class="buttons">
+        <button id="bet">Bet</button>
+        <button id="double">Double</button>
+        <button id="split">Split</button>
+        <button id="start">Start</button>
+        <button id="hit">Hit</button>
+        <button id="stay">Stay</button>
+        <button id="reset">Reset</button>
+        <p id="results"></p>
+      </div>
+    </div>
   </body>
 </html>
