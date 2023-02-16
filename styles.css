@@ -1,5 +1,9 @@
 body {
-  border: 1 px solid whitesmoke;
+  width: 100vw;
+  height: 100vh;
+  /* hide the horizonal scrollbar */
+  overflow-x: hidden;
+  border: 1px solid whitesmoke;
   background-color: #000000;
   color: #fff;
   font-family: monospace;
@@ -7,10 +11,30 @@ body {
   line-height: 1.5;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  position: relative;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid whitesmoke;
+  width: 85vw;
+  height: 70vh;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background-color: black;
+  color: crimson;
+  padding: 0px;
   position: relative;
 }
 .logo {
-  border: 1 px solid whitesmoke;
+  border: 1px solid whitesmoke;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,9 +53,9 @@ body {
   line-height: 2px;
 }
 button {
-  border: 1 px solid whitesmoke;
+  border: 1px solid whitesmoke;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -46,9 +70,28 @@ button {
   line-height: 2px;
   margin: 0.5em;
 }
+.button-container {
+  border: 1px solid whitesmoke;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  width: 70vw;
+  height: 10vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  position: relative;
+  background-color: black;
+  color: crimson;
+}
 .bet-input {
   border: 1 px solid whitesmoke;
   align-items: center;
+  justify-content: center;
 }
 #dealer-cards img {
   border: 1 px solid whitesmoke;
@@ -65,17 +108,3 @@ button {
   margin: 1px;
   border-radius: 5px;
 }
-
-/* #hit {
-  width: 10em;
-  height: 80px;
-  font-size: 20px;
-  border-radius: 1em;
-}
-
-#stay {
-  width: 10em;
-  height: 80px;
-  font-size: 20px;
-  border-radius: 1em;
-} */
