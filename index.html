@@ -17,20 +17,28 @@
           <span id="draws">0</span> Draws
         </p>
       </div>
-      <h2>Dealer: <span id="dealer-sum"></span></h2>
-      <div id="dealer-cards">
-        <img id="hidden" src="./cards/BACK.png" />
-      </div>
-      <h2>You: <span id="your-sum"></span></h2>
-      <div id="your-cards"></div>
-      <br />
-
-      <div class="button-container">
-        <div class="bet-input">
-          <label for="bet">Bet: </label>
-          <input type="number" id="bet" />
+      <div class="cards-container">
+        <div class="dealer">
+          <h2>Dealer: <span id="dealer-sum"></span></h2>
+          <div id="dealer-cards">
+            <img id="hidden" src="./cards/BACK.png" />
+          </div>
         </div>
+        <br />
+        <div>
+          <h2>You: <span id="your-sum"></span></h2>
+          <div id="your-cards"></div>
+          <br />
+        </div>
+      </div>
+      <div class="bet-input">
+        <div class="balance">
+          <h2>Balance: <span id="balance">100$</span></h2>
+        </div>
+        <input type="number" id="bet" />
         <button id="bet">Bet</button>
+      </div>
+      <div class="button-container">
         <button id="hit">Hit</button>
         <button id="start">Stay</button>
         <p id="results"></p>
