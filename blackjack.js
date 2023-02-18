@@ -1,186 +1,43 @@
-let suits = ["hearts", "diamonds", "spades", "clubs"];
-let values = [
-  "ace",
-  "king",
-  "queen",
-  "jack",
-  "ten",
-  "nine",
-  "eight",
-  "seven",
-  "six",
-  "five",
-  "four",
-  "three",
-  "two",
-];
-let hand = dealHand(deck, 2);
-let score = scoreHand(hand);
-console.log(hand);
-console.log(score);
+let balance = document.querySelector("#balance");
+let totalWins = document.querySelector("#wins");
+let totalLosses = document.querySelector("#losses");
+let bet = document.querySelector("#bet-el");
+let message = document.querySelector("#message-el");
+let dealerSum = document.querySelector("#dealer-sum");
+let playerSum = document.querySelector("#player-sum");
+let playerCards = document.querySelector("#player-cards");
+let dealerCards = document.querySelector("#dealer-cards");
+let betInput = document.querySelector("#bet-input");
+let hasBlackJack = false;
+let hiddenCard = document.querySelector("#hidden-card");
+let isAlive = true;
+let canHit = true;
+console.log(betInput);
 
-// Path: deck.js
-let deck = createDeck();
-console.log(deck);
-
-// Path: deck.js
-function createDeck() {
+function getRandomCard() {
+  let randomNumber = Math.floor(Math.random() * 13) + 1;
+  if (randomNumber > 10) {
+    return 10;
+  } else if (randomNumber === 1) {
+    return 11;
+  } else {
+    return randomNumber;
+  }
+}
+window.onload = function () {
+  buildDeck();
+};
+function builtDeck() {
   let deck = [];
-  for (let suitIdx = 0; suitIdx < suits.length; suitIdx++) {
-    for (let valueIdx = 0; valueIdx < values.length; valueIdx++) {
-      let card = {
-        suit: suits[suitIdx],
-        value: values[valueIdx],
-      };
-      deck.push(card);
+  let suits = ["Hearts", "Clubs", "Diamonds", "Spades"];
+  let values = "2,3,4,5,6,7,8,9,10,J,Q,K,A";
+  for (let value of values.split(",")) {
+    for (let suit of suits) {
+      deck.push({ value, suit });
     }
   }
   return deck;
 }
-
-// Path: deck.js
-
-function dealHand(deck, numberOfCards) {
-  let hand = [];
-  for (let i = 0; i < numberOfCards; i++) {
-    hand.push(deck.pop());
-  }
-  return hand;
-}
-
-// Path: deck.js
-
-function scoreHand(hand) {
-  let score = 0;
-  for (let i = 0; i < hand.length; i++) {
-    let card = hand[i];
-    score += getCardNumericValue(card);
-  }
-  return score;
-}
-
-// Path: deck.js
-
-function getCardNumericValue(card) {
-  switch (card.value) {
-    case "ace":
-      return 1;
-    case "two":
-      return 2;
-    case "three":
-      return 3;
-    case "four":
-      return 4;
-    case "five":
-      return 5;
-    case "six":
-      return 6;
-    case "seven":
-      return 7;
-    case "eight":
-      return 8;
-    case "nine":
-      return 9;
-    default:
-      return 10;
-  }
-}
-
-// Path: deck.js
-
-function getCardString(card) {
-  return card.value + " of " + card.suit;
-}
-
-// Path: deck.js
-
-function showStatus() {
-  if (gameOver) {
-    showStatus = "Game Over";
-  } else {
-    showStatus = "You have: " + score + " points";
-  }
-}
-
-// Path: deck.js
-
-function checkForEndOfGame() {
-  showStatus();
-  if (gameOver) {
-    let restart = confirm("Game Over. Do you want to play again?");
-    if (restart) {
-      gameOver = false;
-      playerWon = false;
-      deck = createDeck();
-      shuffleDeck(deck);
-      dealerCards = [getNextCard(), getNextCard()];
-      playerCards = [getNextCard(), getNextCard()];
-    } else {
-      alert("Thanks for playing Blackjack!");
-    }
-  }
-}
-
-// Path: deck.js
-
-function getNextCard() {
-  return deck.shift();
-}
-
-// Path: deck.js
-
-function getCardNumericValue(card) {
-  switch (card.value) {
-    case "ace":
-      return 1;
-    case "two":
-      return 2;
-    case "three":
-      return 3;
-    case "four":
-      return 4;
-    case "five":
-      return 5;
-    case "six":
-      return 6;
-    case "seven":
-      return 7;
-    case "eight":
-      return 8;
-    case "nine":
-      return 9;
-    default:
-      return 10;
-  }
-}
-
-// Path: deck.js
-
-function getScore(cardArray) {
-  let score = 0;
-  let hasAce = false;
-  for (let i = 0; i < cardArray.length; i++) {
-    let card = cardArray[i];
-    score += getCardNumericValue(card);
-    if (card.value === "ace") {
-      hasAce = true;
-    }
-  }
-  if (hasAce && score + 10 <= 21) {
-    return score + 10;
-  }
-  return score;
-}
-
-// Path: deck.js
-
-function updateScores() {
-  dealerScore = getScore(dealerCards);
-  playerScore = getScore(playerCards);
-}
-
-// Path: deck.js
-
 function shuffleDeck(deck) {
   for (let i = 0; i < deck.length; i++) {
     let swapIdx = Math.trunc(Math.random() * deck.length);
@@ -189,85 +46,27 @@ function shuffleDeck(deck) {
     deck[i] = tmp;
   }
 }
-
-// Path: deck.js
-
-function showStatus() {
-  if (gameOver) {
-    if (playerWon) {
-      showStatus = "You win!";
-    } else {
-      showStatus = "Dealer wins!";
-    }
-  } else {
-    showStatus = "You have: " + playerScore + " points";
-  }
+let deck = builtDeck();
+// shuffleDeck(deck);
+// let playerCards = [getRandomCard(), getRandomCard()];
+// let dealerCards = [getRandomCard(), getRandomCard()];
+// let playerSum = 0;
+// let dealerSum = 0;
+// let message = "";
+// let hasBlackJack = false;
+// let isAlive = false;
+// let messageEl = document.getElementById("message-el");
+// let sumEl = document.getElementById("sum-el");
+// let cardsEl = document.getElementById("cards-el");
+// let playerEl = document.getElementById("player-el");
+// let dealerEl = document.getElementById("dealer-el");
+// let balanceEl = document.getElementById("balance-el");
+// function addPlayerBet() {
+//   console.log("Bet clicked");
+// }
+function drawNewCard() {
+  console.log(card);
 }
-
-// Path: deck.js
-
-function checkForEndOfGame() {
-  updateScores();
-
-  if (gameOver) {
-    let restart = confirm("Game Over. Do you want to play again?");
-    if (restart) {
-      gameOver = false;
-      playerWon = false;
-      deck = createDeck();
-      shuffleDeck(deck);
-      dealerCards = [getNextCard(), getNextCard()];
-      playerCards = [getNextCard(), getNextCard()];
-    } else {
-      alert("Thanks for playing Blackjack!");
-    }
-  }
-}
-
-// Path: deck.js
-
-function showStatus() {
-  if (gameOver) {
-    if (playerWon) {
-      showStatus = "You win!";
-    } else {
-      showStatus = "Dealer wins!";
-    }
-  } else {
-    showStatus = "You have: " + playerScore + " points";
-  }
-}
-
-// Path: deck.js
-
-function checkForEndOfGame() {
-  updateScores();
-
-  if (gameOver) {
-    let restart = confirm("Game Over. Do you want to play again?");
-    if (restart) {
-      gameOver = false;
-      playerWon = false;
-      deck = createDeck();
-      shuffleDeck(deck);
-      dealerCards = [getNextCard(), getNextCard()];
-      playerCards = [getNextCard(), getNextCard()];
-    } else {
-      alert("Thanks for playing Blackjack!");
-    }
-  }
-}
-
-// Path: deck.js
-
-function showStatus() {
-  if (gameOver) {
-    if (playerWon) {
-      showStatus = "You win!";
-    } else {
-      showStatus = "Dealer wins!";
-    }
-  } else {
-    showStatus = "You have: " + playerScore + " points";
-  }
+function stopDrawing() {
+  console.log("Stop drawing");
 }
