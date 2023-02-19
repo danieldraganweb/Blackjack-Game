@@ -1,6 +1,8 @@
 body {
   width: 100vw;
   height: 100vh;
+  padding: 0;
+  margin: 0;
   overflow-x: hidden;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
@@ -84,16 +86,16 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 65vw;
+  width: 50vw;
   max-width: 2000px;
-  min-width: 300px;
-  height: 100vh;
+  min-width: 500px;
+  height: -webkit-fill-available;
   margin-left: auto;
   margin-right: auto;
   position: relative;
   padding: 0px;
   position: relative;
-  max-height: 100vh;
+  max-height: 900vh;
 }
 .cards-container {
   width: -webkit-fill-available;
@@ -117,11 +119,11 @@ body {
   margin-right: auto;
   margin-top: 1em;
   color: white;
-  font-size: 1.5em;
+  font-size: 1em;
   border-radius: 0.5em;
   line-height: 0.5;
   width: fit-content;
-  height: 8em;
+  height: 9em;
   position: relative;
   line-height: 2px;
   box-sizing: content-box;

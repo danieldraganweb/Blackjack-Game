@@ -11,14 +11,14 @@
       <div class="logo">
         <h1>Blackjack Casino</h1>
         <p>
-          <span id="wins">0</span> Wins <span id="losses">0</span> Losses
+          <span id="wins">0</span> WINS <span id="losses">0</span> LOSSES
         </p>
       </div>
-      <h2 id = "bet-el">Bet: </h2>
+      <h2 id = "bet-el">BET :</h2>
       <span id="message-el"></span>
       <div class="cards-container">
         <div class="dealer">
-          <h2>Dealer: <span id="dealer-sum"></span></h2>
+          <h2>DEALER: <span id="dealer-sum"></span></h2>
           <div id="dealer-cards">
             <img id="hidden-card" src="./cards/BACK.png" />
           </div>
@@ -26,21 +26,22 @@
         </br>
         <br />
         <div>
-          <h2>Player: <span id="player-sum"></span></h2>
+          <h2>PLAYER: <span id="player-sum"></span></h2>
           <div id="player-cards"></div>
           <br />
         </div>
       </div>
       <div class="bet-input">
         <div class="balance">
-          <h3>Balance: <span id="balance">10000 $</span></h3>
+          <h3>BALANCE: <span id="balance">10000 $</span></h3>
           <input type="number" id="bet-input" />
-        </div>
+          <button  onclick="startGame()">BET</button>
+        </div>    
       </div>
       <div class="buttons">
-        <button id="bet" onclick="addPlayerBet">Bet</button>
-        <button id="hit" onclick="drawNewCard">Hit</button>
-        <button id="stay" onclick="stopDrawing">Stay</button>
+        <button id="hit" onclick="newCard()">HIT</button>
+        <button id="stay" onclick="stay()">HOLD</button>
+        <button id="deal" onclick="startNewGame()">NEW GAME</button>
       </div>
     </div>
     <script src="blackjack.js"></script>
